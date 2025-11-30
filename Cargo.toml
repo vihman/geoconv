@@ -1,0 +1,7 @@
+[package]
+name = "geoconv"
+version = "0.1.0"
+edition = "2024"
+
+[dependencies]
+proj = { version = "0.31.0", default-features = false, features = ["bundled_proj"]}
