@@ -60,18 +60,21 @@ impl Coord<f64> for CoordStruct {
 #[cfg(test)]
 mod tests {
 
+    use proj::ProjCreateError;
+
     use super::*;
 
     #[test]
     fn test_est97_to_wgs84() {
-        let result = est97_to_wgs84(&6585021.15, &549443.23 );
+        let result = est97_to_wgs84(&6585021.15, &549443.23 ).unwrap();
         assert_eq!(result.1, 59.400235813566866);
         assert_eq!(result.0, 24.870385830398387);
     }
 
         #[test]
     fn test_wgs84_to_est97() {
-        let result = wgs84_to_est97(&59.400235813566866, &24.870385830398387);
+        let result = wgs84_to_est97(&59.400235813566866, &24.870385830398387).unwrap();
+
         assert_eq!(result.1, 6585021.15);
         assert_eq!(result.0, 549443.23);
     }

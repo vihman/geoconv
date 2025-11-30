@@ -39,6 +39,7 @@ fn main() {
                     }
         },
         _ =>  {
+            help();
             Err(String::from("Arguments not understood."))
         }
     };
@@ -47,8 +48,8 @@ fn main() {
 }
 
 
-fn parse(from: &String, to: &String) -> Result<(f64,f64), ParseFloatError> {
-    Ok((from.parse::<f64>()?, to.parse::<f64>()?))
+fn parse(from_x: &String, from_y: &String) -> Result<(f64,f64), ParseFloatError> {
+    Ok((from_x.parse::<f64>()?, from_y.parse::<f64>()?))
 }
 
 
